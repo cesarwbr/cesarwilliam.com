@@ -1,0 +1,10 @@
+@import "../../bower_components/bourbon/app/assets/stylesheets/bourbon";
+@import "fonts";
+@import "vars";
+
+body {
+    background: $yellow;
+    display: flex;
+    font-size: golden-ratio(14px,  1);
+    font-family: 'Fira Sans';
+}

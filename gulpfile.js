@@ -35,7 +35,11 @@ gulp.task('jekyll-rebuild', ['jekyll-build'], function () {
     browserSync.reload();
 });
 
-gulp.task('build-site', gulpsync.sync(['jekyll-build', 'styles', 'wiredep']));
+gulp.task('build-site', gulpsync.sync(['jade', 'jekyll-build', 'build-assets',
+    'wiredep'
+]));
+
+gulp.task('build-assets', ['styles', 'images']);
 
 /**
  * Wait for jekyll-build, then launch the Server
@@ -67,6 +71,13 @@ gulp.task('styles', function () {
 
 });
 
+gulp.task('images', function () {
+    log('Reducing images...');
+
+    return gulp.src(config.largeImg + '**')
+        .pipe(gulp.dest(config.img));
+});
+
 gulp.task('wiredep', function () {
     log('Wire up the bower css js and our app js into the html');
     var options = config.getWiredepDefaultOptions();
@@ -95,11 +106,11 @@ gulp.task('jade', function () {
  * Watch html/md files, run jekyll & reload BrowserSync
  */
 gulp.task('watch', function () {
-    gulp.watch(config.sass + '*.scss', ['styles', browserSync.reload]);
+    gulp.watch(config.sass + '**', ['styles', browserSync.reload]);
     gulp.watch(['index.html', config.layouts + '*.html',
         config.includes + '*'
     ], [
-        'jekyll-rebuild'
+        'build-site'
     ]);
     gulp.watch(config.jade + '*.jade', ['jade']);
 });

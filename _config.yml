@@ -1,4 +1,0 @@
-name: Cesar William
-markdown: redcarpet
-highlighter: pygments # or rouge or null
-exclude: ["node_modules", "gulpfile.js", "gulp.config.js", "bower.json", "package.json", "assets"]

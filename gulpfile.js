@@ -5,9 +5,15 @@ var browserSync = require('browser-sync');
 var cp = require('child_process');
 var config = require('./gulp.config')();
 var gulpsync = require('gulp-sync')(gulp);
+var deploy = require('gulp-gh-pages');
 
 var $ = require('gulp-load-plugins')({
     lazy: true
+});
+
+gulp.task('deploy', ['build-site'], function () {
+    return gulp.src('. / _site /**/ * ')
+        .pipe(deploy());
 });
 
 /**
@@ -35,7 +41,8 @@ gulp.task('jekyll-rebuild', ['jekyll-build'], function () {
     browserSync.reload();
 });
 
-gulp.task('build-site', gulpsync.sync(['jade', 'jekyll-build', 'build-assets',
+gulp.task('build-site', gulpsync.sync(['jade', 'jekyll-build',
+    'build-assets',
     'wiredep'
 ]));
 

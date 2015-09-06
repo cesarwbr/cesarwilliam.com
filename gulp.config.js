@@ -9,11 +9,13 @@ module.exports = function () {
         // Build
         site: site,
         css: site + 'assets/css/',
+        js: site + 'assets/js/',
         img: site + 'assets/img/',
         index: site + 'index.html',
         // Source
         assets: assets,
         sass: assets + 'css/',
+        javascript: assets + 'js/',
         largeImg: assets + 'img/',
         jade: '_jadefiles/',
         includes: '_includes/',

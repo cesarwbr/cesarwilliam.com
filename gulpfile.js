@@ -39,7 +39,7 @@ gulp.task('build-site', gulpsync.sync(['jade', 'jekyll-build', 'build-assets',
     'wiredep'
 ]));
 
-gulp.task('build-assets', ['styles', 'images']);
+gulp.task('build-assets', ['styles', 'images', 'js']);
 
 /**
  * Wait for jekyll-build, then launch the Server
@@ -73,9 +73,14 @@ gulp.task('styles', function () {
 
 gulp.task('images', function () {
     log('Reducing images...');
-
+    // TODO reduce images
     return gulp.src(config.largeImg + '**')
         .pipe(gulp.dest(config.img));
+});
+
+gulp.task('js', function () {
+    return gulp.src(config.javascript + '**')
+        .pipe(gulp.dest(config.js));
 });
 
 gulp.task('wiredep', function () {
@@ -87,6 +92,9 @@ gulp.task('wiredep', function () {
         .src(config.index)
         .pipe(wiredep(options))
         .pipe($.inject(gulp.src(config.css + '/**/*.css'), {
+            relative: true
+        }))
+        .pipe($.inject(gulp.src(config.js + '/**/*.js'), {
             relative: true
         }))
         .pipe(gulp.dest(config.site));

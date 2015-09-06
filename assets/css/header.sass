@@ -22,6 +22,7 @@ header
         margin: 0 auto
 
     .presentation
+        width: 100%
         position: absolute
         top: 50%
         left: 50%
@@ -41,6 +42,9 @@ header
         position: absolute
         transform: translateX(-50%);
         white-space: nowrap
+        color: rgba(255, 255, 255, 0.7)
+        cursor: pointer
+        text-decoration: none
 
         span
             font-size: 1.125em
@@ -51,14 +55,13 @@ header
             margin: 0 auto
             display: flex
             align-items: center
-            cursor: pointer
 
             span:before,
             span:after
                 content: ""
                 display: block
                 height: 2px
-                background: #fff
+                background: rgba(255, 255, 255, 0.7)
                 width: 30px
                 transition: all 0.3s ease-in-out
 
@@ -68,9 +71,15 @@ header
 
             span:before
                 transform: translateX(21px) translateY(1px) rotate(-45deg)
+        &:hover
+            color: rgba(255, 255, 255, 1)
 
-            &:hover span:after
-                transform: rotate(-45deg)
+        &:hover span:after,
+        &:hover span:before
+            background: rgba(255, 255, 255, 1)
 
-            &:hover span:before
-                transform: translateX(21px) translateY(1px) rotate(45deg)
+        &:hover span:after
+            transform: rotate(-45deg)
+
+        &:hover span:before
+            transform: translateX(21px) translateY(1px) rotate(45deg)

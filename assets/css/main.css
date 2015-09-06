@@ -155,9 +155,14 @@ footer {
       height: 40px;
       border-radius: 50%;
       background: #ccc;
-      color: #364347; }
+      color: #364347;
+      -webkit-transition: all 0.3s ease-in-out;
+              transition: all 0.3s ease-in-out; }
       footer .contacts .contact i {
         padding-top: 13px; }
+      footer .contacts .contact:hover {
+        background: #364347;
+        color: #ccc; }
 
 body {
   font-family: 'Fira Sans', sans-serif;

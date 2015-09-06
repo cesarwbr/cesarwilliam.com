@@ -1,6 +1,9 @@
 .experience
     text-align: center
 
+    .experience-img
+        max-width: 100%
+
     .experience-types
         max-width: 1100px
         display: flex
@@ -23,3 +26,13 @@
 
             .experience-type-describe
                 color: $mygray
+
+    @media (max-width: 775px)
+        .experience-types
+            display: block
+
+            .experience-type
+                box-sizing: border-box
+                width: 100%
+                max-width: 100%
+                padding: 50px 10px 0 10px

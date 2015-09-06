@@ -1,6 +1,5 @@
 @import "../../bower_components/bourbon/app/assets/stylesheets/bourbon";
-@import "../../bower_components/font-awesome/scss/font-awesome";
-@import "fonts";
+//@import "fonts";
 @import "vars";
 @import "header";
 @import "section";
@@ -8,6 +7,6 @@
 @import "footer";
 
 body {
-    font-family: 'Fira Sans';
+    font-family: 'Fira Sans', sans-serif;
     font-size: 16px;
 }

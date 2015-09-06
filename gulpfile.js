@@ -12,7 +12,7 @@ var $ = require('gulp-load-plugins')({
 });
 
 gulp.task('deploy', ['build-site'], function () {
-    return gulp.src('. / _site /**/ * ')
+    return gulp.src('./_site/**/*')
         .pipe(deploy());
 });
 

@@ -1,0 +1,15 @@
+# humanstxt.org/
+# The humans responsible & technology colophon
+
+# TEAM
+
+    Cesar -- Owner -- @cesarwbr
+
+# THANKS
+
+    To my mom.
+
+# TECHNOLOGY COLOPHON
+
+    CSS3, HTML5, Jade, Gulp, Bower, Jekyll, Sass
+    Apache Server Configs, jQuery, Modernizr, Normalize.css

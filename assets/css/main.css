@@ -2054,14 +2054,14 @@ header {
   color: #fff;
   box-sizing: border-box;
   padding-top: 20px;
-  background-image: url(/assets/img/header-bg.jpg);
+  background-image: url(assets/img/header-bg.jpg);
   background-position: center;
   background-size: cover; }
   header .logo {
     overflow: hidden;
     text-indent: 101%;
     white-space: nowrap;
-    background-image: url(/assets/img/logo.svg);
+    background-image: url(assets/img/logo.svg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;

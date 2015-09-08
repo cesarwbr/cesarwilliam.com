@@ -9,6 +9,8 @@
   <link rel="shortcut icon" href="favicon.ico" />
   <link href="https://fonts.googleapis.com/css?family=Fira+Sans:400,300,700" rel="stylesheet" type="text/css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <script src="bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
+  <link rel="import" href="bower_components/google-analytics/google-analytics.html">
 
   <!-- bower:css -->
   <link rel="stylesheet" href="bower_components/normalize-css/normalize.css" />
@@ -21,7 +23,7 @@
 </head>
 
 <body>
-  <header><div class="logo">Cesar William</div><div class="presentation"><h2 class="myname">Hi! My name is Cesar</h2><h3 class="myabout">A Computer Scientist and Frontend Engineer</h3></div><a href="#experience" class="moreabout"><span>More about me teste</span><div class="nav-toggle"><span></span></div></a></header>
+  <header><div class="logo">Cesar William</div><div class="presentation"><h2 class="myname">Hi! My name is Cesar</h2><h3 class="myabout">A Computer Scientist and Frontend Engineer</h3></div><a href="#experience" class="moreabout"><span>More about me</span><div class="nav-toggle"><span></span></div></a></header>
 
 <section id="experience" class="section experience"><h1 class="section-title">Something about<span> my experience</span></h1><img src="assets/img/macbook.png" class="experience-img"/><div class="experience-types"><div class="experience-type"><i class="fa fa-cogs fa-5x experience-type-icon"></i><h2 class="experience-type-title">Methodology</h2><p class="experience-type-describe">Experience with Agile methodologies like XP and Scrum. I use these methodologies to promote effective interaction between team members to deliver value to the business.</p></div><div class="experience-type"><i class="fa fa-code fa-5x experience-type-icon"></i><h2 class="experience-type-title">Code</h2><p class="experience-type-describe">Regardless of the code I'm using I like to write code following best practices and always trying to solve problems in the most performative way. In backend I'm Java certifited and I like develop in languages such as Ruby and golang. In the frontend I like to work with preprocessors in CSS and JavaScript with its awesome frameworks.</p></div><div class="experience-type"><i class="fa fa-flask fa-5x experience-type-icon"></i><h2 class="experience-type-title">User Experience</h2><p class="experience-type-describe">In UX exploring many different approaches to solving a specific user problem and ensure that the product logically flows from one step to the next. I like to do this conducting in-person user tests to observe one's behavior and identifying verval and non-verbal stumbling blocks, they refine and iterate to create the "best" user experience.</p></div></div></section>
 
@@ -36,15 +38,7 @@
   <script src="assets/js/scroll-smoth.js"></script>
   <!-- endinject -->
 
-  <script>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-      ga('create', 'UA-67252968-1', 'auto');
-      ga('send', 'pageview');
-  </script>
+  <google-analytics code="UA-67252968-1"></google-analytics>
 </body>
 
 </html>

@@ -43,7 +43,7 @@ gulp.task('jekyll-rebuild', ['jekyll-build'], function () {
 
 gulp.task('build-site', gulpsync.sync(['jade', 'jekyll-build',
     'build-assets',
-    'wiredep'
+    'inject'
 ]));
 
 gulp.task('build-assets', ['styles', 'images', 'js']);
@@ -90,7 +90,7 @@ gulp.task('js', function () {
         .pipe(gulp.dest(config.js));
 });
 
-gulp.task('wiredep', function () {
+gulp.task('inject', function () {
     log('Wire up the bower css js and our app js into the html');
     var options = config.getWiredepDefaultOptions();
     var wiredep = require('wiredep').stream;
@@ -114,6 +114,43 @@ gulp.task('jade', function () {
     return gulp.src(config.jade + '*.jade')
         .pipe($.jade())
         .pipe(gulp.dest(config.includes));
+});
+
+gulp.task('optimize', function optimize() {
+    var assets = $.useref.assets({
+        searchPath: config.site
+    });
+
+    var cssFilter = $.filter('**/*.css');
+
+    log(config.css + '**/*.css');
+    var jsLibFilter = $.filter('**/' + config.optimized.lib);
+    var jsAppFilter = $.filter('**/' + config.optimized.app);
+
+    return gulp
+        .src(config.index)
+        .pipe($.debug({
+            title: 'index:'
+        }))
+        .pipe($.plumber())
+        .pipe(assets)
+        .pipe($.debug({
+            title: 'assets:'
+        }))
+        .pipe(cssFilter) // filter css
+        .pipe($.debug({
+            title: 'cssFilter:'
+        }))
+        .pipe($.csso()) // sso
+        .pipe($.debug({
+            title: 'csso:'
+        }))
+        .pipe(cssFilter.restore) // css filter restore
+        .pipe($.debug({
+            title: 'cssFilter.restoer:'
+        }))
+        .pipe(gulp.dest(config.site));
+
 });
 
 /**

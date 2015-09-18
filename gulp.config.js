@@ -12,6 +12,10 @@ module.exports = function () {
         js: site + 'assets/js/',
         img: site + 'assets/img/',
         index: site + 'index.html',
+        optimized: {
+            app: 'app.js',
+            lib: 'lib.js'
+        },
         // Source
         assets: assets,
         sass: assets + 'css/',

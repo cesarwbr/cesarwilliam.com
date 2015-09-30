@@ -1,14 +1,13 @@
-'use strict';
-
 module.exports = function () {
     var site = './_site/';
     var assets = './assets/';
     var layouts = './_layouts/';
+    var temp = './.tmp/';
 
     var config = {
         // Build
         site: site,
-        css: site + 'assets/css/',
+        css: temp + 'css/',
         js: site + 'assets/js/',
         img: site + 'assets/img/',
         index: site + 'index.html',
@@ -16,6 +15,7 @@ module.exports = function () {
             app: 'app.js',
             lib: 'lib.js'
         },
+        temp: temp,
         // Source
         assets: assets,
         sass: assets + 'css/',
